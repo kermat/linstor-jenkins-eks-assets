@@ -1,0 +1,25 @@
+operator:
+  controller:
+    dbConnectionURL: k8s
+  satelliteSet:
+    storagePools:
+      lvmThinPools:
+      - name: ext-meta-pool
+        thinVolume: metapool
+        volumeGroup: ""
+        devicePaths:
+        - /dev/nvme1n1
+      - name: lvm-thin
+        thinVolume: thinpool
+        volumeGroup: ""
+        devicePaths:
+        - /dev/nvme2n1
+    kernelModuleInjectionMode: Compile
+etcd:
+  enabled: false
+stork:
+  enabled: false
+csi:
+  enableTopology: true
+haController:
+  replicas: 3

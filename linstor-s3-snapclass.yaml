@@ -1,0 +1,17 @@
+kind: VolumeSnapshotClass
+apiVersion: snapshot.storage.k8s.io/v1
+metadata:
+  name: linstor-csi-snapshot-class-s3
+driver: linstor.csi.linbit.com
+deletionPolicy: Delete
+parameters:
+  snap.linstor.csi.linbit.com/type: S3
+  snap.linstor.csi.linbit.com/remote-name: s3-us-west-2
+  snap.linstor.csi.linbit.com/allow-incremental: "false"
+  snap.linstor.csi.linbit.com/s3-bucket: itzabucket123
+  snap.linstor.csi.linbit.com/s3-endpoint: http://s3.us-west-2.amazonaws.com
+  snap.linstor.csi.linbit.com/s3-signing-region: us-west-2
+  snap.linstor.csi.linbit.com/s3-use-path-style: "false"
+  # Secret to store access credentials
+  csi.storage.k8s.io/snapshotter-secret-name: linstor-csi-s3-access
+  csi.storage.k8s.io/snapshotter-secret-namespace: linstor

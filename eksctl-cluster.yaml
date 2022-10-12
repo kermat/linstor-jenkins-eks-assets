@@ -1,0 +1,11 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: linbit-eks
+  region: us-west-2
+  version: "1.22"
+managedNodeGroups:
+- name: lb-mng-0
+  launchTemplate:
+    id: lt-02cc5d8e514668eea
+  desiredCapacity: 3

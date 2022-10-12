@@ -1,0 +1,9 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: jenkins-dr-snapshot-0
+  namespace: jenkins
+spec:
+  volumeSnapshotClassName: linstor-csi-snapshot-class-s3
+  source:
+    persistentVolumeClaimName: jenkins

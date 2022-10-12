@@ -1,0 +1,7 @@
+persistence:
+  storageClass: linstor-csi-lvm-thin-r3
+  size: "20Gi"
+controller:
+  serviceType: LoadBalancer
+  podLabels:
+    linstor.csi.linbit.com/on-storage-lost: remove

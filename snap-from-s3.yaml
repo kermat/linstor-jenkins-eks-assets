@@ -1,0 +1,26 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotContent
+metadata:
+  name: restored-snapshot
+  namespace: jenkins
+spec:
+  deletionPolicy: Delete
+  driver: linstor.csi.linbit.com
+  source:
+    snapshotHandle: <PLACE_BACKUP_NAME_HERE>
+  volumeSnapshotClassName: linstor-csi-snapshot-class-s3
+  volumeSnapshotRef:
+    apiVersion: snapshot.storage.k8s.io/v1
+    kind: VolumeSnapshot
+    name: restored-snapshot
+    namespace: jenkins
+---
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: restored-snapshot
+  namespace: jenkins
+spec:
+  source:
+    volumeSnapshotContentName: restored-snapshot
+  volumeSnapshotClassName: linstor-csi-snapshot-class-s3

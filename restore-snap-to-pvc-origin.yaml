@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-restored
+  namespace: jenkins
+spec:
+  storageClassName: linstor-csi-lvm-thin-r3
+  accessModes:
+  - ReadWriteOnce
+  dataSource:
+    name: jenkins-dr-snapshot-0
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+  resources:
+    requests:
+      storage: 20G
