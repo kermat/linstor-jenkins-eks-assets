@@ -21,5 +21,3 @@ stork:
   enabled: false
 csi:
   enableTopology: true
-haController:
-  replicas: 3

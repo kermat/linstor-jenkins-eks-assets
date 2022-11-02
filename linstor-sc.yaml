@@ -10,6 +10,10 @@ parameters:
   DrbdOptions/Disk/disk-flushes: "no"
   DrbdOptions/Disk/md-flushes: "no"
   DrbdOptions/Net/max-buffers: "10000"
+  DrbdOptions/auto-quorum: suspend-io
+  DrbdOptions/Resource/on-no-data-accessible: suspend-io
+  DrbdOptions/Resource/on-suspended-primary-outdated: force-secondary
+  DrbdOptions/Net/rr-conflict: retry-connect
   property.linstor.csi.linbit.com/StorPoolNameDrbdMeta: "ext-meta-pool"
 reclaimPolicy: Retain
 allowVolumeExpansion: true
@@ -27,6 +31,10 @@ parameters:
   DrbdOptions/Disk/disk-flushes: "no"
   DrbdOptions/Disk/md-flushes: "no"
   DrbdOptions/Net/max-buffers: "10000"
+  DrbdOptions/auto-quorum: suspend-io
+  DrbdOptions/Resource/on-no-data-accessible: suspend-io
+  DrbdOptions/Resource/on-suspended-primary-outdated: force-secondary
+  DrbdOptions/Net/rr-conflict: retry-connect
   property.linstor.csi.linbit.com/StorPoolNameDrbdMeta: "ext-meta-pool"
 reclaimPolicy: Retain
 allowVolumeExpansion: true
@@ -44,6 +52,10 @@ parameters:
   DrbdOptions/Disk/disk-flushes: "no"
   DrbdOptions/Disk/md-flushes: "no"
   DrbdOptions/Net/max-buffers: "10000"
+  DrbdOptions/auto-quorum: suspend-io
+  DrbdOptions/Resource/on-no-data-accessible: suspend-io
+  DrbdOptions/Resource/on-suspended-primary-outdated: force-secondary
+  DrbdOptions/Net/rr-conflict: retry-connect
   property.linstor.csi.linbit.com/StorPoolNameDrbdMeta: "ext-meta-pool"
 reclaimPolicy: Retain
 allowVolumeExpansion: true
