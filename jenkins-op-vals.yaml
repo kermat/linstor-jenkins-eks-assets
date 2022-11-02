@@ -3,5 +3,8 @@ persistence:
   size: "20Gi"
 controller:
   serviceType: LoadBalancer
-  podLabels:
-    linstor.csi.linbit.com/on-storage-lost: remove
+  installPlugins:
+  - configuration-as-code:latest
+  - kubernetes:latest
+  - workflow-aggregator:latest
+  - git:latest
