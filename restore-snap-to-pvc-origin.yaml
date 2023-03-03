@@ -13,4 +13,4 @@ spec:
     apiGroup: snapshot.storage.k8s.io
   resources:
     requests:
-      storage: 20G
+      storage: 20Gi

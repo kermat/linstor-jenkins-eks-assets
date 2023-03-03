@@ -15,6 +15,7 @@ operator:
         devicePaths:
         - /dev/nvme2n1
     kernelModuleInjectionMode: Compile
+    kernelModuleInjectionImage: "drbd.io/drbd9-amzn2:v9.2.2"
 etcd:
   enabled: false
 stork:
