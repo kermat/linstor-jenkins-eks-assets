@@ -3,7 +3,7 @@ kind: ClusterConfig
 metadata:
   name: linbit-eks
   region: us-west-2
-  version: "1.24"
+  version: "1.29"
 managedNodeGroups:
 - name: lb-mng-0
   launchTemplate:
